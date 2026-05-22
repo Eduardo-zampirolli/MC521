@@ -18,30 +18,11 @@ typedef vector<int> vi;
 #define MAX 10e12
 
 int main(){
-    ifstream fin("gymnastics.in");
-    ofstream fout ("gymnastics.out");
-    int k, n;
-    fin >> k >> n;
-    vector<vi> ranks(k, vi(n)), pairs(n, vi(n, 0));
-    for (int i = 0; i < k; i++) for(int j = 0; j < n; j++) fin >> ranks[i][j];
-    
-    for (int i = 0; i < k; i++){
-        for (int j = 0; j < n-1; j++){
-            for (int l = j+1; l < n; l++) {
-                int a, b;
-                a = ranks[i][j]-1;
-                b = ranks[i][l]-1;
-                pairs[a][b]++;
-            }
-        }
-    }
-    int count = 0;
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            if (pairs[i][j]==k) count ++;
-        }
-    }
-    fout << count << endl;
+    ifstream fin("backforth.in");
+    ofstream fout ("backforth.out");
+    int fb[10], sb[10];
+    for (int i = 0; i < 10; i++) fin >> fb[i];
+    for (int i = 0; i < 10; i++) fin >> sb[i];
 
     fin.close();
     fout.close();
